@@ -14,7 +14,7 @@ bool isPrime(int number) {
 int main() {
     int number;
     std::cout << "Enter a number: ";
-    std::cin >> number;
+    number = 4;
 
     if (isPrime(number))
         std::cout << number << " is a prime number.\n";
