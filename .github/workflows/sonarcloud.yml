@@ -25,11 +25,13 @@ jobs:
       - name: Run build-wrapper
         run: |
           mkdir build
-          cmake -S . -B build
+          cd build
+          cmake -DCODE_COVERAGE=ON ..
+          make -j
           build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} cmake --build build/ --config Release
       - name: Run tests to generate coverage statistics
         run: |
-          ./build/YourProjectName
+          ./build/runUnitTests
       - name: Collect coverage into one XML report
         run: |
           gcovr --sonarqube > coverage.xml

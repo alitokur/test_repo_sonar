@@ -1,6 +1,4 @@
-// Filename: main.cpp
-
-#include <iostream>
+// main.cpp
 #include <cmath>
 
 bool isPrime(int number) {
@@ -9,18 +7,5 @@ bool isPrime(int number) {
         if (number % i == 0) return false;
     }
     return true;
-}
-
-int main() {
-    int number;
-    std::cout << "Enter a number: ";
-    number = 4;
-
-    if (isPrime(number))
-        std::cout << number << " is a prime number.\n";
-    else
-        std::cout << number << " is not a prime number.\n";
-
-    return 0;
 }
 
